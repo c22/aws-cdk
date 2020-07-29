@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as assets from '@aws-cdk/assets';
+import * as core from '@aws-cdk/core';
 import * as iam from '@aws-cdk/aws-iam';
 import * as kms from '@aws-cdk/aws-kms';
 import * as s3 from '@aws-cdk/aws-s3';
@@ -10,7 +10,7 @@ import { toSymlinkFollow } from './compat';
 
 const ARCHIVE_EXTENSIONS = [ '.zip', '.jar' ];
 
-export interface AssetOptions extends assets.CopyOptions, cdk.AssetOptions {
+export interface AssetOptions extends core.CopyOptions, cdk.AssetOptions {
   /**
    * A list of principals that should be able to read this asset from S3.
    * You can use `asset.grantRead(principal)` to grant read permissions later.
